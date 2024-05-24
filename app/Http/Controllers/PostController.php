@@ -35,7 +35,7 @@ class PostController extends Controller
             'post' => $request->post,
             'status' => (is_null($request->status) ? 0 : 1)
         ]);
-        return redirect()->route('post.index')->with('message', 'Post Successfully Saved!');
+        return redirect()->route('post.index')->with('message', 'New Post Successfully Added!');
     }
 
     /**
