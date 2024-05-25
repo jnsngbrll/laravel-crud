@@ -23,8 +23,22 @@
                         <p>Status: {!! $post->status == 1 ? '<small class="text-success">Published</small>' : '<small class="text-danger">Unpublished</small>' !!}</p>
                         <p>Post: {{ $post->post }}</p>
                     </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ __('Comment') }}</h5>
+                        @auth
+                            <form action="{{ route('comment.store', $post) }}" method="POST">
+                                @csrf
+                                <div class="mb-3">
+                                    <textarea name="comment" class="form-control" placeholder="Add a comment"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        @endauth
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+ 
 </x-app-layout>
