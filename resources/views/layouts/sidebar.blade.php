@@ -16,6 +16,11 @@
                         <i class="bi bi-circle" ></i><span>{{ __('Posts') }}</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('comment.index') }}" style="{{ request()->routeIs('comment.index') ? 'color: #4154f1;' : '' }}">
+                        <i class="bi bi-circle" ></i><span>{{ __('Comments') }}</span>
+                    </a>
+                </li>
             </ul>
         </li>
     </ul>

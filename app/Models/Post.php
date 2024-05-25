@@ -20,5 +20,8 @@ class Post extends Model
         'post',
         'status',
     ];
-    
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

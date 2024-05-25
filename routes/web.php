@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +37,7 @@ Route::middleware('auth', 'verified')->group(function () {
     // Route::delete('/post/{post}', [PostController::class, 'destroy'])->name('post.destroy');
 
     Route::resource('post', PostController::class);
+    Route::resource('comment', CommentController::class);
 });
 
 require __DIR__.'/auth.php';
